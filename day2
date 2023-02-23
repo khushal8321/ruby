@@ -1,0 +1,143 @@
+1.Difference between and vs && with examples.
+=> Difference between && and and in ruby is mainly the Precedence of these operators. ‘and’ and ‘&&’ both have different precedence. 
+d = a && b && c
+puts "D is #{d}"
+=> false
+e = a and b and c
+puts "E is #{e}"
+=> true
+   
+2. Difference between next and break with examples
+    break  
+        in this break the stop too the next iteration or others bounce back 
+        
+    example  
+        
+           for i in 0..5
+           if i>2
+           break
+           end
+           puts "number is #{i}"
+           end 
+           
+           output 
+           
+            number is 0
+            number is 1
+            number is 2
+           
+           
+    next 
+         in this next condition is false then the code is executed
+          for i in 0..5
+           if i<2
+           next
+           end
+           puts "number is #{i}"
+           end
+           
+           
+           output
+           
+           number is 2
+           number is 3
+           number is 4
+           number is 5
+           
+           
+3.Difference between redo and retry with examples.
+
+redo
+Restarts this iteration of the most internal loop, without checking loop condition. Restarts yield or call if called within a block.
+
+Example
+
+for i in 0..5 
+    if i>2 then
+    
+    puts " value of #{i}"
+    redo
+    end
+ end
+ 
+ 
+ retry
+ To repeat the whole loop iteration from the start the retry statement is used. retry always used inside the loop.
+ 
+ 
+ 
+ example
+ 
+ 10.times do |i|
+  begin
+    puts "Iteration #{i}"
+    raise if i > 2
+  rescue
+  
+    # Using retry
+    retry
+  end
+end
+
+
+4.Difference between eql? and equal? with examples
+
+.eql?	
+True if the receiver and argument have both the same type and equal values.	
+
+1 == 1.0 returns true, but 1.eql?(1.0) is false
+
+
+equal?	
+True if the receiver and argument have the same object id.	
+
+if aObj is duplicate of bObj then aObj == bObj is true, a.equal?bObj is false but a.equal?aObj is true.
+
+
+5. List spread operators with examples
+
+
+Ruby Arithmetic Operators
+       Assume variable a holds 10 and variable b holds 20, then −
+ 
+       Operator	Description	Example
++	Addition −
+           Adds values on either side of the operator.	a + b will give 30
+−	Subtraction − 
+           Subtracts right hand operand from left hand operand.	a - b will give -10
+*	Multiplication − 
+           Multiplies values on either side of the operator.	a * b will give 200
+/	Division − 
+           Divides left hand operand by right hand operand.	b / a will give 2
+%	Modulus − 
+           Divides left hand operand by right hand operand and returns remainder.	b % a will give 0
+**	Exponent − 
+           Performs exponential (power) calculation on operators.	a**b will give 10 to the power 20
+
+Ruby Comparison Operators
+        Assume variable a holds 10 and variable b holds 20, then −
+
+       Operator	Description	Example
+==	Checks if the value of two operands are equal or not, if yes then condition becomes true.	(a == b) is not true.
+!=	Checks if the value of two operands are equal or not, if values are not equal then condition becomes true.	(a != b) is true.
+>	Checks if the value of left operand is greater than the value of right operand, if yes then condition becomes true.	(a > b) is not true.
+<	Checks if the value of left operand is less than the value of right operand, if yes then condition becomes true.	(a < b) is true.
+>=	Checks if the value of left operand is greater than or equal to the value of right operand, if yes then condition becomes true.	(a >= b) is not true.
+<=	Checks if the value of left operand is less than or equal to the value of right operand, if yes then condition becomes true.	(a <= b) is true.
+<=>	Combined comparison operator. Returns 0 if first operand equals second, 1 if first operand is greater than the second and -1 if first operand is less than the second.	(a <=> b) returns -1.
+===	Used to test equality within a when clause of a case statement.	(1...10) === 5 returns true.
+.eql?	True if the receiver and argument have both the same type and equal values.	1 == 1.0 returns true, but 1.eql?(1.0) is false.
+equal?	True if the receiver and argument have the same object id.	if aObj is duplicate of bObj then aObj == bObj is true, a.equal?bObj is false but a.equal?aObj is true.
+
+
+Ruby Assignment Operators
+        Assume variable a holds 10 and variable b holds 20, then −
+
+        Operator	Description	Example
+=	Simple assignment operator, assigns values from right side operands to left side operand.	c = a + b will assign the value of a + b into c
++=	Add AND assignment operator, adds right operand to the left operand and assign the result to left operand.	c += a is equivalent to c = c + a
+-=	Subtract AND assignment operator, subtracts right operand from the left operand and assign the result to left operand.	c -= a is equivalent to c = c - a
+*=	Multiply AND assignment operator, multiplies right operand with the left operand and assign the result to left operand.	c *= a is equivalent to c = c * a
+/=	Divide AND assignment operator, divides left operand with the right operand and assign the result to left operand.	c /= a is equivalent to c = c / a
+%=	Modulus AND assignment operator, takes modulus using two operands and assign the result to left operand.	c %= a is equivalent to c = c % a
+**=	Exponent AND assignment operator, performs exponential (power) calculation on operators and assign value to the left operand.
