@@ -1,44 +1,29 @@
-class Shops
-    NAME="xyz shop"
-    puts "shop name is #{NAME}"
-    @@total=0
-   
-    def initialize(name,price)
+class Shop
+    NAME="radhe shop"
+    @@company="hari krishna"
+    
+   def initialize(name,price)
         @name=name
-        @price=price
+        @price=price.to_i
+        
     end
  
-    def person
-        @@total += @price.to_i
-        puts "name is #{@name} and price is #{@price} total #{@@total}"
+    def product()
+       puts "welcome to #{NAME}  a product name is #{@name} and company #{@@company} with gst is  #{@@gst}%"
+        total= @price * @@gst/100
+        ans = @price + total
+        puts "product detail"
+        puts "#{@@name} - #{ans}"
     end
     
-
-    def final
-        @final = @@total + $gst.to_i
-        
-      @equal=@final.to_i * $gst.to_i
-        
-        @@ans=@@total.to_i + ((@equal.to_i)/100)
-        puts "this is #{@@ans}"
-    end
-    END{
-        
-      
-    }
+    begin
+        puts "enter a name"
+        @@name=gets
+        puts "enter a gst"
+        @@gst=gets.to_i
+        get_user=Shop.new("book",500)
+        get_user.product
+   end   
 end
 
 
-puts "enter a name"
-name=gets
-puts name
-puts "enter a gst"
-$gst=gets
-
-puts $gst
-item1=Shops.new("pen",10)
-item2=Shops.new("book",50)
-item1.person
-item2.person
-item1.final
-item2.final
